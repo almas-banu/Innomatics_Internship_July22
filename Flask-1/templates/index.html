@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex</title>
+</head>
+<style>
+    h1{
+        text-align: center;
+    }
+    .box{
+        margin: 0 auto;
+        height:400pt;
+        width: 700px;
+        padding: 20px;
+        background:pink;
+        border:2px solid #333;
+    }
+</style>
+<body style="background-color:lightseagreen">
+    <h1>Regex101 Clone</h1>
+    <div class = "box">
+        <form action="{{url_for ('fun_1') }}" method="post">
+            <label><b>REGULAR EXPRESSION </b></label><br>
+            <input type="regexp" name="reg" style="height:20pt;width:500px" placeholder="insert your regular expression here" required><br><br><br>
+            <label><b>TEST STRING</b></label><br>
+            <input type="text" name="str" style="font-size:10pt;height:200pt;width:500px" placeholder="insert your test string here" required><br><br><br>
+            <button style="background-color:cornflowerblue;height:30pt;width:100px"><b>Submit</b></button>
+        </form>
+    </div>
+    
+</body>
+</html>

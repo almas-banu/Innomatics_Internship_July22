@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex</title>
+</head>
+<style>
+    h1{
+        text-align: center;
+    }
+    .box{
+        margin: 0 auto;
+        height:400pt;
+        width: 600px;
+        padding: 20px;
+        background: pink;
+        border:2px solid #333;
+    }
+</style>
+<h1>RegEx101 Clone</h1>
+<body style="background-color:lightseagreen">
+    <div class="box">
+        <a href="{{ url_for('fun_1')}}">Home</a>
+        <h1>Result</h1>
+        <p>
+            Entered String is <b>"{{s}}"</b> <br></br>
+            Entered RegEx is <b> "{{p}}"</b><br></br>
+        </p>
+        {% if l %}
+        <h2>Match Found!</h2>
+        <ul>
+            <li><b>The number of matches found : {{n}}</b></li><br>
+            <li><b>Location of pattern found in text : </b></li><br>
+            <ul>
+                <b>
+                {% for i in l %}
+                <li>{{i}}</li>
+                {% endfor %}
+                </b>
+            </ul>  
+        </ul>
+        {% else %}
+            <h4>No Match Found</h4>
+        {% endif %}
+    </div>
+</body>
+</html>
