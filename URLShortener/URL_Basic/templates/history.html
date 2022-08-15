@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block title %}
+      <title>URL History</title>
+{% endblock %}
+
+{% block content %}
+<style>
+    *{
+         margin:0;
+         padding:0;
+         font-family:arial;
+         box-sizing:border-box;
+     }
+     table{
+         width:600px;
+         box-shadow:-1px 12px 12px -6px rgba(0,0,0,0.5);
+     }
+     table,td,th{
+         padding:20px;
+         border: 1px solid black;
+         border-collapse: collapse;
+         text-align: center;
+         cursor:pointer;
+     }
+     td{
+         font-size:18px;
+     }
+     th{
+         background-color:chocolate;
+         color: white;
+     }
+     tr:nth-child(odd){
+         background-color: lightblue;
+     }
+     tr:nth-child(odd):hover{
+         background-color: dodgerblue;
+         color:black;
+         transform:scale(1.5);
+         transition:transform 300ms ease-in;
+     }
+     tr:nth-child(even){
+         background-color:#ededed;
+     }
+     tr:nth-child(even):hover{
+         background-color: lightgrey;
+         transform:scale(1.5);
+         transition:transform 300ms ease-in;
+     }
+</style>
+
+<table class="table table-hover table-dark table-fixed" style="background-color:#FFD">
+    <tr>
+        <th>ID</th>
+        <th>Original URL's</th>
+        <th>Shorter URL's</th>
+    </tr>
+
+    <tbody id="forbar">
+
+   {% for url in urls %}
+    <tr>
+        <td>{{url.id}}</td>
+        <td>{{url.long}}</td>
+        <td>http://127.0.0.1:5000/{{url.short}}</td>
+    </tr>
+   {% endfor %}
+{% endblock %}
+
+
